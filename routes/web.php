@@ -25,7 +25,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('create',function(){
+Route::get('create','PoetryController@create');
 
-	return view('create');
-});
+Route::post('poetry/save', 'PoetryController@insert');
