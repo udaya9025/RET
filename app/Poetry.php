@@ -8,5 +8,5 @@ class Poetry extends Model
 {
    protected $table="poetry";
 
-   protected $fillable=['title','body','author','pid'];
+   protected $fillable=['title','body','author','pid','published_at'];
 }
