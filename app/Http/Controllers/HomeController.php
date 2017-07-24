@@ -31,14 +31,24 @@ class HomeController extends Controller
 
       //return $poems;
       $user_details=DB::table('users')->where('id',Auth::user()->id)->get();
+       
+       //return $user_details;
 
-      //return $user_details;
+      $suggestion_follower=DB::table('users')->where('id','!=',Auth::user()->id)->get();
 
-      return view('home')->with('poems',$poems)->with('user_details',$user_details);
+      //return $suggestion_follower;
+     
+
+      return view('home')->with('poems',$poems)->with('user_details',$user_details)->with('details',$suggestion_follower);
 
     }else{
 
         return redirect('/login');
     }
+   }
+
+   public function sampleemil(){
+
+    return view('email-sample');
    }
 }

@@ -62,7 +62,16 @@
 
                 <div class="panel-body">
                     <div>
-                    <h4>One</h4>
+                    @foreach($details as $detail)
+                    
+                        <h4>{{ $detail->name }}</h4>
+
+                        <form action="followers/id" method="get">
+                            <input type="hidden" name="f_id" value="{{ $detail->id }}">
+                            <input type="submit"  class="btn btn-primary" value="Follow">
+                        </form>
+
+                    @endforeach
                     </div>
 
                 </div>
